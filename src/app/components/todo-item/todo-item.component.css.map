@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,OAAO;EAChB,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,OAAO;EACf,KAAK,EAAE,KAAK;CACb;;AAED,AAAA,KAAK,CAAC;EACJ,UAAU,EAAE,OAAO;EACnB,OAAO,EAAE,IAAI;EACb,aAAa,EAAE,eAAe;CAC/B;;AAED,AAAA,YAAY,CAAC;EACX,eAAe,EAAE,YAAY;CAC9B",
+    "sources": [
+        "todo-item.component.scss"
+    ],
+    "names": [],
+    "file": "todo-item.component.css"
+}
