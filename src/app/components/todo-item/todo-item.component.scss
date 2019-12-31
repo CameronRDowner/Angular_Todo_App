@@ -1,5 +1,5 @@
 .del {
-    background: #ff0000;
+    background-color: #ff3333;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -8,6 +8,10 @@
     line-height: 19px;
     width: 20px;
     text-align: center;
+
+    &:hover{
+      background-color: #ff6666;
+    }
   }
   
   .todo-item {
@@ -71,6 +75,9 @@
   /* When the checkbox is checked, add a blue background */
   .checkbox-container input:checked ~ .checkmark {
     background-color: #94CD5E;
+    &:hover{
+      background-color:#b1db8a;
+    }
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
