@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from '../../services/todo.service';
+import { TodosService } from '../../services/todos.service';
 import {Todo} from '../../models/Todo'
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
-  selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss'],
+  selector: 'app-todos-container',
+  templateUrl: './todos-container.component.html',
+  styleUrls: ['./todos-container.component.scss'],
   animations: [
     trigger('fade', [
       transition('void => *', [
@@ -19,20 +19,20 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ])
   ]
 })
-export class TodosComponent implements OnInit {
+export class TodosContainerComponent implements OnInit {
   todos:Todo[];
-  constructor(private todoService:TodoService) {
+  constructor(private todosService:TodosService) {
    }
 
   ngOnInit() {
-    this.todoService.getTodos().subscribe(todos=> { this.todos = todos});
+    this.todosService.getTodos().subscribe(todos=> { this.todos = todos});
   }
   deleteTodo(todo:Todo){
       this.todos.splice(this.todos.indexOf(todo), 1);
-    this.todoService.deleteTodo(todo).subscribe();
+    this.todosService.deleteTodo(todo).subscribe();
   }
   addTodo(todo:Todo){
-    this.todoService.addTodo(todo).subscribe(todo=>{
+    this.todosService.addTodo(todo).subscribe(todo=>{
       this.todos.push(todo);
 
     })

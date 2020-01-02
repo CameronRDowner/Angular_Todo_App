@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class TodoService {
+export class TodosService {
   todosUrl:string = 'https://jsonplaceholder.typicode.com/todos';
   todosLimit = '?_limit=10';
   constructor(private http:HttpClient) { }
