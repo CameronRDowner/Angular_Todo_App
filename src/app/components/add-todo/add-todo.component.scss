@@ -7,14 +7,20 @@
     padding: 5px;
     border-right: none;
     border-left: none;
-    border-top: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
+    border-top: 2px solid #dce5ef;
+    border-bottom: 2px solid #dce5ef;
+    background-color: white;
+
+    &:hover{
+      background-color: #f2f2f2;
+    }
   }
   
   .form input[type='submit'] {
     flex: 2;
     background-color: #dce5ef;
     border: none;
+    font-weight: 600;
 
     &:hover{
       background-color:#EEF2F7 ;
