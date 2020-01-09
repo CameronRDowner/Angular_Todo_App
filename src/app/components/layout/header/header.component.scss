@@ -1,24 +1,29 @@
 .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  position: relative;
   background: #333;
   color: #fff;
   text-align: center;
-  padding-left: 10px;
-  h1{
-    padding: 0 110px 0 10px;
+  height: 100px;
+  nav{
+    display: inline-block;
+    position: absolute;
+    left: 42%;
+    top: 40%;
   }
 
-  }
-  
-  .header a {
+  a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-
     &:hover{
       color: #cccccc;
     }
+  }
+
+  h1{
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    top: 10%;
+  }
   }

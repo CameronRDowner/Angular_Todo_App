@@ -24,7 +24,7 @@ export class TodosService {
   }
 
 
-  toggleCompleted(todo:Todo):Observable<any> {
+  todoCompletedToggled(todo:Todo):Observable<any> {
     const url = `${this.todosUrl}/${todo.id}`;
 return this.http.put(url, todo, httpOptions);
   }
