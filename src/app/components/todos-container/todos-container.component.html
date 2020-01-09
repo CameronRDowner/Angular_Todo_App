@@ -1,5 +1,5 @@
 <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
 <div @fade *ngFor="let todo of todoList">
-<app-todo-item [todo] = "todo" (deleteTodo)="deleteTodo($event)" (completedToggled)="sortTodoByCompletion($event)" >
+<app-todo-item [todo] = "todo" (deleteTodo)="deleteTodo($event)" (completedToggled)="completedToggled($event)" >
 </app-todo-item>
 </div>

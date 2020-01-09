@@ -42,7 +42,7 @@ export class TodosContainerComponent implements OnInit {
       }
    });
   }
-  sortTodoByCompletion(todo:Todo){
+  private sortTodoByCompletion(todo:Todo){
     this.deleteTodoFromList(todo);
     let indexOfTodoInsert:number = this.todoList.findIndex(todo => todo.completed === true);
     setTimeout(()=>{
@@ -64,5 +64,9 @@ export class TodosContainerComponent implements OnInit {
     this.addTodoToList(todo);
 
     })
+  }
+  completedToggled(todo:Todo){
+    this.todosService.todoCompletedToggled(todo).subscribe( todo => console.log(todo));
+    this.sortTodoByCompletion(todo);
   }
 }

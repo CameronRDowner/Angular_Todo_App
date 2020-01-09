@@ -23,12 +23,11 @@ export class TodoItemComponent implements OnInit {
   onToggle(todo) {
     todo.completed = !todo.completed;
     this.completedToggled.emit(todo);
-    this.todoService.todoCompletedToggled(todo).subscribe( todo => console.log(todo));
   }
   onDelete(todo){
     this.deleteTodo.emit(todo);
   }
-  constructor(private todoService:TodosService) { }
+  constructor() { }
 
   ngOnInit() {
   }
