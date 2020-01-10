@@ -25,7 +25,7 @@ export class TodosContainerComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.todosService.getTodos().subscribe((todos: Todo[])=> { this.todoList = this.sortTodoListByCompletion(todos)});
+    this.todosService.getTodoList().subscribe((todos: Todo[])=> { this.todoList = this.sortTodoListByCompletion(todos)});
   }
   private sortTodoListByCompletion(unsortedTodos:Todo[]){
     return unsortedTodos.sort((a, b) => {
@@ -53,16 +53,16 @@ export class TodosContainerComponent implements OnInit {
     this.todoList.splice((indexOfInsert == undefined ? 0 : indexOfInsert),0,todo);
   }
   private addTodoToDb(todo:Todo){
-    this.todosService.addTodo(todo).subscribe()
+    this.todosService.addTodoItem(todo).subscribe()
   }
   private deleteTodoFromList(todo: Todo){
     this.todoList.splice(this.todoList.indexOf(todo), 1);
   }
   private deleteTodoFromDb(todo:Todo){
-    this.todosService.deleteTodo(todo).subscribe();
+    this.todosService.deleteTodoItem(todo).subscribe();
   }
   private updateCompletedInDb(todo: Todo){
-    this.todosService.todoCompletedToggled(todo).subscribe();
+    this.todosService.todoItemCompletedToggled(todo).subscribe();
   }
   deleteTodo(todo:Todo){
     this.deleteTodoFromList(todo);

@@ -19,22 +19,22 @@ export class TodosService {
   constructor(private http:HttpClient) { }
 
 
-  getTodos(): Observable<Todo[]> {
+  getTodoList(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);
   }
 
 
-  todoCompletedToggled(todo:Todo):Observable<any> {
+  todoItemCompletedToggled(todo:Todo):Observable<any> {
     const url = `${this.todosUrl}/${todo.id}`;
 return this.http.put(url, todo, httpOptions);
   }
 
-  deleteTodo(todo:Todo):Observable<Todo> {
+  deleteTodoItem(todo:Todo):Observable<Todo> {
     const url = `${this.todosUrl}/${todo.id}`;
     return this.http.delete<Todo>(url, httpOptions);
   }
 
-  addTodo(todo:Todo):Observable<Todo> {
+  addTodoItem(todo:Todo):Observable<Todo> {
     return this.http.post<Todo>(this.todosUrl, todo, httpOptions);
   }
 }
