@@ -52,21 +52,28 @@ export class TodosContainerComponent implements OnInit {
   private addTodoToList(todo:Todo, indexOfInsert?:number){
     this.todoList.splice((indexOfInsert == undefined ? 0 : indexOfInsert),0,todo);
   }
+  private addTodoToDb(todo:Todo){
+    this.todosService.addTodo(todo).subscribe()
+  }
   private deleteTodoFromList(todo: Todo){
     this.todoList.splice(this.todoList.indexOf(todo), 1);
   }
-  deleteTodo(todo:Todo){
-    this.deleteTodoFromList(todo);
+  private deleteTodoFromDb(todo:Todo){
     this.todosService.deleteTodo(todo).subscribe();
   }
+  private updateCompletedInDb(todo: Todo){
+    this.todosService.todoCompletedToggled(todo).subscribe();
+  }
+  deleteTodo(todo:Todo){
+    this.deleteTodoFromList(todo);
+    this.deleteTodoFromDb(todo);
+  }
   addTodo(todo:Todo){
-    this.todosService.addTodo(todo).subscribe(todo=>{
+    this.addTodoToDb(todo);
     this.addTodoToList(todo);
-
-    })
   }
   completedToggled(todo:Todo){
-    this.todosService.todoCompletedToggled(todo).subscribe( todo => console.log(todo));
+    this.updateCompletedInDb(todo);
     this.sortTodoByCompletion(todo);
   }
 }
