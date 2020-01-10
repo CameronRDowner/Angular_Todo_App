@@ -9,8 +9,8 @@ import { TodosService } from 'src/app/services/todos.service';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
-  @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter(); 
-  @Output() completedToggled : EventEmitter<Todo> = new EventEmitter();
+  @Output() deleteTodoEvent: EventEmitter<Todo> = new EventEmitter(); 
+  @Output() completedToggledEvent : EventEmitter<Todo> = new EventEmitter();
   
   setClasses(){
     let classes = {
@@ -22,10 +22,10 @@ export class TodoItemComponent implements OnInit {
   }
   onToggle(todo) {
     todo.completed = !todo.completed;
-    this.completedToggled.emit(todo);
+    this.completedToggledEvent.emit(todo);
   }
   onDelete(todo){
-    this.deleteTodo.emit(todo);
+    this.deleteTodoEvent.emit(todo);
   }
   constructor() { }
 
