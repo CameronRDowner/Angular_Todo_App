@@ -5,10 +5,20 @@
   text-align: center;
   height: 100px;
   nav{
-    display: inline-block;
+    display: flex;
     position: absolute;
     left: 42%;
     top: 40%;
+    @media only screen and (max-width: 800px){
+      left: auto;
+      right: 5%;
+    }
+    a:first-child{
+      padding-right: 0.5rem;
+    }
+    a:last-child{
+      padding-left: 0.5rem;
+    }
   }
 
   a {
@@ -23,7 +33,7 @@
   h1{
     display: inline-block;
     position: absolute;
-    left: 3%;
+    left: 5%;
     top: 10%;
   }
   }
